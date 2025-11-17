@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rapid Rentals - Light truck and MiniBus hire in Takanini, South Auckland. Affordable furniture moving and people transport solutions.">
+    <title>Rapid Rentals Takanini | Light Truck & MiniBus Hire</title>
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Rapid Rentals</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="prices.html">Prices</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to Rapid Rentals</h2>
+                <p class="hero-subtitle">Family-owned truck and MiniBus hire in Takanini</p>
+                <div class="cta-buttons">
+                    <a href="prices.html" class="btn btn-primary">View Prices</a>
+                    <a href="tel:+6492981738" class="btn btn-secondary">Call Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Rapid Rentals is a family owned business that aims to provide a high quality, friendly rental service. We specialise in light truck and MiniBus hire which is generally used for moving furniture and people with ease.</p>
+                <p>We are situated in Takanini, not far from the Takanini off ramp and just across the road from Burger King and the new Zed service station. Come and see us now!</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Us</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🚛 Light Trucks</h3>
+                        <p>Easy to drive on a car licence</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚐 MiniBus</h3>
+                        <p>Perfect for groups</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💰 Affordable</h3>
+                        <p>Competitive rates</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📍 Convenient</h3>
+                        <p>Great Takanini location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vehicles">
+            <div class="container">
+                <h2>Our Rental Vehicles</h2>
+                <p class="section-subtitle">Click on any vehicle to view more photos</p>
+                
+                <div class="vehicle-grid">
+                    <!-- Tail Lift Truck -->
+                    <div class="vehicle-card" onclick="openGallery('tailLift')">
+                        <img src="Photos/Gallery/manual-tail-lift-main.jpg" alt="Tail Lift Truck" class="vehicle-image">
+                        <h3>Tail Lift Truck</h3>
+                        <p>Manual tail lift for easy loading</p>
+                        <span class="view-photos">View 5 photos →</span>
+                    </div>
+
+                    <!-- Manual Tail Lift Truck -->
+                    <div class="vehicle-card" onclick="openGallery('manualTailLift')">
+                        <img src="Photos/Gallery/manual-tail-lift-1.jpg" alt="Manual Tail Lift Truck" class="vehicle-image">
+                        <h3>Manual Tail Lift Truck</h3>
+                        <p>Perfect for furniture moving</p>
+                        <span class="view-photos">View 4 photos →</span>
+                    </div>
+
+                    <!-- Cargo Van -->
+                    <div class="vehicle-card" onclick="openGallery('cargoVan')">
+                        <img src="Photos/Gallery/cargo-van-main.jpg" alt="Cargo Van" class="vehicle-image">
+                        <h3>Cargo Van</h3>
+                        <p>Spacious and efficient</p>
+                        <span class="view-photos">View 9 photos →</span>
+                    </div>
+
+                    <!-- Furniture Trailer (Tandem Axle) -->
+                    <div class="vehicle-card" onclick="openGallery('trailerTandem')">
+                        <img src="Photos/Gallery/1 2025.jpg" alt="Furniture Trailer Tandem Axle" class="vehicle-image">
+                        <h3>Furniture Trailer (Tandem Axle)</h3>
+                        <p>Heavy-duty dual axle trailer</p>
+                        <span class="view-photos">View 6 photos →</span>
+                    </div>
+
+                    <!-- Furniture Trailer (Single Axle) - commented out as images may not exist -->
+                    <!--
+                    <div class="vehicle-card" onclick="openGallery('trailerSingle')">
+                        <img src="Photos/Gallery/furniture_trailer_1.jpg" alt="Furniture Trailer Single Axle" class="vehicle-image">
+                        <h3>Furniture Trailer (Single Axle)</h3>
+                        <p>Compact and maneuverable</p>
+                        <span class="view-photos">View 3 photos →</span>
+                    </div>
+                    -->
+
+                    <!-- Ride On Zero Turn Mowers -->
+                    <div class="vehicle-card" onclick="openGallery('zeroTurn')">
+                        <img src="Photos/Gallery/ride-on-mowers-main.jpg" alt="Zero Turn Mowers" class="vehicle-image">
+                        <h3>Ride On Zero Turn Mowers</h3>
+                        <p>Professional lawn equipment</p>
+                        <span class="view-photos">View 3 photos →</span>
+                    </div>
+
+                    <!-- Ride on Mowers -->
+                    <div class="vehicle-card" onclick="openGallery('rideMowers')">
+                        <img src="Photos/Gallery/Ride On Mower Main.JPG" alt="Ride On Mowers" class="vehicle-image">
+                        <h3>Ride On Mowers</h3>
+                        <p>Reliable lawn mowers</p>
+                        <span class="view-photos">View 4 photos →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Modal -->
+        <div id="galleryModal" class="modal">
+            <span class="modal-close" onclick="closeGallery()">&times;</span>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="galleryTitle"></h3>
+                </div>
+                <div class="gallery-container">
+                    <button class="gallery-nav prev" onclick="changeImage(-1)">&#10094;</button>
+                    <img id="galleryImage" src="" alt="">
+                    <button class="gallery-nav next" onclick="changeImage(1)">&#10095;</button>
+                </div>
+                <div class="gallery-thumbnails" id="thumbnails"></div>
+                <div class="gallery-counter">
+                    <span id="imageCounter"></span>
+                </div>
+            </div>
+        </div>
+
+        <section class="insurance">
+            <div class="container">
+                <h2>Insurance Information</h2>
+                <div class="insurance-grid">
+                    <div class="insurance-card">
+                        <h3>Over 25 Years</h3>
+                        <p>Full licence 12+ months</p>
+                        <p class="excess">$2,000 excess</p>
+                    </div>
+                    <div class="insurance-card">
+                        <h3>21-25 Years</h3>
+                        <p>Full licence 12+ months</p>
+                        <p class="excess">$2,500 excess</p>
+                    </div>
+                    <div class="insurance-card">
+                        <h3>Under 21</h3>
+                        <p>Full licence 12+ months</p>
+                        <p class="excess">$3,000 excess</p>
+                    </div>
+                    <div class="insurance-card">
+                        <h3>New Drivers</h3>
+                        <p>Licence less than 12 months</p>
+                        <p class="excess">$3,500 excess</p>
+                    </div>
+                    <div class="insurance-card">
+                        <h3>Restricted</h3>
+                        <p>Restricted licence holders</p>
+                        <p class="excess">$3,500 excess</p>
+                    </div>
+                    <div class="insurance-card highlight">
+                        <h3>Reduce Excess</h3>
+                        <p>Pay $20 per day</p>
+                        <p class="excess">-$1,000 reduction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rapid Rentals Takanini</p>
+        </div>
+    </footer>
+
+    <script>
+        const galleries = {
+            tailLift: {
+                title: "Tail Lift Truck",
+                images: [
+                    "Photos/Gallery/manual-tail-lift-1.jpg",
+                    "Photos/Gallery/manual-tail-lift-2.jpg",
+                    "Photos/Gallery/manual-tail-lift-3.jpg",
+                    "Photos/Gallery/manual-tail-lift-4.jpg",
+                    "Photos/Gallery/manual-tail-lift-main.jpg"
+                ]
+            },
+            manualTailLift: {
+                title: "Manual Tail Lift Truck",
+                images: [
+                    "Photos/Gallery/manual-tail-lift-1.jpg",
+                    "Photos/Gallery/manual-tail-lift-2.jpg",
+                    "Photos/Gallery/manual-tail-lift-3.jpg",
+                    "Photos/Gallery/manual-tail-lift-4.jpg"
+                ]
+            },
+            cargoVan: {
+                title: "Cargo Van",
+                images: [
+                    "Photos/Gallery/cargo-van-main.jpg",
+                    "Photos/Gallery/cargo-van-1.jpg",
+                    "Photos/Gallery/cargo-van-2.jpg",
+                    "Photos/Gallery/cargo-van-3.jpg",
+                    "Photos/Gallery/cargo-van-4.jpg",
+                    "Photos/Gallery/cargo-van-5.jpg",
+                    "Photos/Gallery/cargo-van-6.jpg",
+                    "Photos/Gallery/cargo-van-7.jpg",
+                    "Photos/Gallery/cargo-van-8.jpg"
+                ]
+            },
+            trailerTandem: {
+                title: "Furniture Trailer (Tandem Axle)",
+                images: [
+                    "Photos/Gallery/1 2025.jpg",
+                    "Photos/Gallery/1 2025 - Copy.jpg",
+                    "Photos/Gallery/2 2025.jpg",
+                    "Photos/Gallery/3 2025.jpg",
+                    "Photos/Gallery/5 2025.jpg",
+                    "Photos/Gallery/back 2025.jpg"
+                ]
+            },
+            zeroTurn: {
+                title: "Ride On Zero Turn Mowers",
+                images: [
+                    "Photos/Gallery/ride-on-mowers-main.jpg",
+                    "Photos/Gallery/Lawn-Mower.jpg",
+                    "Photos/Gallery/lawn-mower-main.jpg"
+                ]
+            },
+            rideMowers: {
+                title: "Ride On Mowers",
+                images: [
+                    "Photos/Gallery/Ride On Mower Main.JPG",
+                    "Photos/Gallery/Ride On Mower 1.JPG",
+                    "Photos/Gallery/Ride On Mower 2.JPG",
+                    "Photos/Gallery/Ride On Mower 3.JPG",
+                    "Photos/Gallery/Ride On Mower 4.JPG"
+                ]
+            }
+        };
+
+        let currentGallery = null;
+        let currentImageIndex = 0;
+
+        function openGallery(galleryName) {
+            currentGallery = galleries[galleryName];
+            currentImageIndex = 0;
+            
+            document.getElementById('galleryTitle').textContent = currentGallery.title;
+            document.getElementById('galleryModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            showImage(0);
+            renderThumbnails();
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            currentGallery = null;
+        }
+
+        function showImage(index) {
+            if (!currentGallery) return;
+            
+            currentImageIndex = index;
+            if (currentImageIndex < 0) currentImageIndex = currentGallery.images.length - 1;
+            if (currentImageIndex >= currentGallery.images.length) currentImageIndex = 0;
+            
+            document.getElementById('galleryImage').src = currentGallery.images[currentImageIndex];
+            document.getElementById('imageCounter').textContent = `${currentImageIndex + 1} / ${currentGallery.images.length}`;
+            
+            updateThumbnails();
+        }
+
+        function changeImage(direction) {
+            showImage(currentImageIndex + direction);
+        }
+
+        function renderThumbnails() {
+            if (!currentGallery) return;
+            
+            const container = document.getElementById('thumbnails');
+            container.innerHTML = '';
+            
+            currentGallery.images.forEach((img, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = img;
+                thumb.className = 'thumbnail';
+                thumb.onclick = () => showImage(index);
+                container.appendChild(thumb);
+            });
+        }
+
+        function updateThumbnails() {
+            const thumbs = document.querySelectorAll('.thumbnail');
+            thumbs.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('galleryModal').addEventListener('click', (e) => {
+            if (e.target.id === 'galleryModal') closeGallery();
+        });
+    </script>
+</body>
+</html>
