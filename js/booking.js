@@ -63,36 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function sendBookingRequest(data) {
-    const emailBody = `
-NEW BOOKING REQUEST - Rapid Rentals
-=====================================
-
-VEHICLE: ${data.vehicle}
-
-RENTAL PERIOD:
-Pick-up: ${formatDate(data.pickupDate)} at ${data.pickupTime}
-Return: ${formatDate(data.returnDate)} at ${data.returnTime}
-
-CUSTOMER DETAILS:
-Name: ${data.fullName}
-Email: ${data.email}
-Phone: ${data.phone}
-Address: ${data.address || 'Not provided'}
-
-PURPOSE: ${data.purpose || 'Not specified'}
-
-SPECIAL REQUESTS: ${data.notes || 'None'}
-
-Submitted: ${new Date(data.timestamp).toLocaleString('en-NZ')}
-    `.trim();
-
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            saveBookingLocally(data);
-            console.log('Booking request:', data);
-            resolve({ success: true });
-        }, 1500);
+    // TODO: Replace with your API Gateway endpoint after AWS setup
+    const API_ENDPOINT = 'YOUR_API_GATEWAY_URL/booking'; // e.g., https://abc123.execute-api.ap-southeast-2.amazonaws.com/booking
+    
+    // Send to API
+    const response = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
     });
+
+    if (!response.ok) {
+        throw new Error('Failed to send booking request');
+    }
+
+    const result = await response.json();
+    
+    // Also save locally as backup
+    saveBookingLocally(data);
+    
+    return result;
 }
 
 function formatDate(dateString) {
