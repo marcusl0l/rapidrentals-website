@@ -29,8 +29,8 @@ Search and select these policies:
 Click **Next**
 
 ### D. Name and Create
-- **Role name:** `RapidRentalsBookingLambdaRole`
-- **Description:** Allows Lambda to send emails via SES
+- **Role name:** `BookingEmailSenderRole`
+- **Description:** Allows Lambda functions to send booking emails via SES
 - Click **Create role**
 
 ✅ **Done!** Copy the role name for next step.
@@ -51,7 +51,7 @@ AWS Console → Search "Lambda" → Functions → Create function
 
 ### C. Permissions
 - **Execution role:** Use an existing role
-- **Existing role:** Select `RapidRentalsBookingLambdaRole`
+- **Existing role:** Select `BookingEmailSenderRole`
 
 Click **Create function**
 

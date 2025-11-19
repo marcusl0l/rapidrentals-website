@@ -29,7 +29,7 @@ To send to any customer email:
 2. Click **Create role**
 3. Select **Lambda** as trusted entity
 4. Attach policy: `AmazonSESFullAccess`
-5. Name it: `RapidRentalsBookingLambdaRole`
+5. Name it: `BookingEmailSenderRole`
 6. Create role
 
 ## Step 4: Create Lambda Function
