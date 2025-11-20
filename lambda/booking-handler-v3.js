@@ -8,7 +8,9 @@ const TO_EMAIL = process.env.TO_EMAIL || 'info@rapidrentals.co.nz';
 exports.handler = async (event) => {
     console.log('Received booking:', JSON.stringify(event, null, 2));
     
-    if (event.httpMethod === 'OPTIONS') {
+    // Handle CORS preflight - MUST CHECK BEFORE PARSING BODY!
+    const method = event.httpMethod || event.requestContext?.http?.method;
+    if (method === 'OPTIONS') {
         return {
             statusCode: 200,
             headers: {
@@ -21,6 +23,7 @@ exports.handler = async (event) => {
     }
     
     try {
+        // Parse body only after OPTIONS check
         const data = JSON.parse(event.body);
         
         if (!data.vehicle || !data.pickupDate || !data.fullName || !data.email || !data.phone) {
