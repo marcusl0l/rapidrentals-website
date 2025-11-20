@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function sendBookingRequest(data) {
-    // TODO: Replace with your API Gateway endpoint after AWS setup
-    const API_ENDPOINT = 'YOUR_API_GATEWAY_URL/booking'; // e.g., https://abc123.execute-api.ap-southeast-2.amazonaws.com/booking
+    // AWS API Gateway endpoint
+    const API_ENDPOINT = 'https://1usj3xh6m4.execute-api.ap-southeast-2.amazonaws.com/booking';
     
     // Send to API
     const response = await fetch(API_ENDPOINT, {
