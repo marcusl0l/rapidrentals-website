@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             await sendBookingRequest(data);
-            form.style.display = 'none';
+            // Hide form and show success message
+            form.querySelectorAll('.form-section, .form-actions').forEach(el => el.style.display = 'none');
             successMessage.style.display = 'block';
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } catch (error) {
