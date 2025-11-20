@@ -46,7 +46,7 @@ AWS Console → Search "Lambda" → Functions → Create function
 
 ### B. Basic Information
 - **Function name:** `rapidrentals-booking-handler`
-- **Runtime:** Node.js 18.x (or latest)
+- **Runtime:** Node.js 22.x (or latest available)
 - **Architecture:** x86_64 (or arm64 for lower cost)
 
 ### C. Permissions

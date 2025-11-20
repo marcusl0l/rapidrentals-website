@@ -14,7 +14,7 @@ AWS Console → SES → Verified identities → Create identity
 ```
 AWS Console → Lambda → Create function
 Name: rapidrentals-booking-handler
-Runtime: Node.js 18.x
+Runtime: Node.js 22.x
 Role: Create new role with SES permissions
 
 → Copy code from: lambda/booking-handler.js

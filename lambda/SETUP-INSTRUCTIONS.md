@@ -36,7 +36,7 @@ To send to any customer email:
 
 1. Go to **Lambda** → **Create function**
 2. **Function name:** `rapidrentals-booking-handler`
-3. **Runtime:** Node.js 18.x (or latest)
+3. **Runtime:** Node.js 22.x (or latest available)
 4. **Architecture:** arm64 (cheaper) or x86_64
 5. **Permissions:** Use existing role → Select `RapidRentalsBookingLambdaRole`
 6. Click **Create function**
