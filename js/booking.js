@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function sendBookingRequest(data) {
     // AWS API Gateway endpoint
-    const API_ENDPOINT = 'https://1usj3xh6m4.execute-api.ap-southeast-2.amazonaws.com/booking';
+    const API_ENDPOINT = 'https://cxy5qaa7y0.execute-api.ap-southeast-2.amazonaws.com/booking';
     
     // Send to API
     const response = await fetch(API_ENDPOINT, {
