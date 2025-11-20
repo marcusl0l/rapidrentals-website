@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function sendBookingRequest(data) {
-    // AWS API Gateway endpoint
-    const API_ENDPOINT = 'https://cxy5qaa7y0.execute-api.ap-southeast-2.amazonaws.com/booking';
+    // AWS Lambda Function URL (bypasses API Gateway for better CORS)
+    const API_ENDPOINT = 'https://eot3movgtqg6fubmcdj2yjpqva0zhikb.lambda-url.ap-southeast-2.on.aws/';
     
     // Send to API
     const response = await fetch(API_ENDPOINT, {
