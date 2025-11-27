@@ -19,13 +19,21 @@ customHeaders:
         value: 'nosniff'
       - key: 'X-Frame-Options'
         value: 'SAMEORIGIN'
+      - key: 'Cache-Control'
+        value: 'public, max-age=3600'
 redirects:
-  # Old ContactUs.html to new contact.html (301 permanent)
+  # Old pages (301 permanent redirects)
   - source: '/ContactUs.html'
     target: '/contact'
     status: '301'
+  - source: '/Prices.html'
+    target: '/prices'
+    status: '301'
+  - source: '/Home/Home.dwt'
+    target: '/'
+    status: '301'
   
-  # Remove index.html from all URLs (301 permanent)
+  # Remove index.html from URLs
   - source: '/index.html'
     target: '/'
     status: '301'
@@ -41,7 +49,18 @@ redirects:
     target: '/booking'
     status: '301'
   
-  # SPA fallback for clean URLs (serves index.html)
+  # Rewrite clean URLs to .html files (200 internal rewrite)
+  - source: '/contact'
+    target: '/contact.html'
+    status: '200'
+  - source: '/prices'
+    target: '/prices.html'
+    status: '200'
+  - source: '/booking'
+    target: '/booking.html'
+    status: '200'
+  
+  # 404 handler
   - source: '/<*>'
     target: '/index.html'
     status: '404'
