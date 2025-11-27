@@ -45,8 +45,6 @@ redirects:
   - source: '/prices.html'
     target: '/prices'
     status: '301'
-  - source: '/booking.html'
-    target: '/booking'
     status: '301'
   
   # Rewrite clean URLs to .html files (200 internal rewrite)
@@ -56,8 +54,6 @@ redirects:
   - source: '/prices'
     target: '/prices.html'
     status: '200'
-  - source: '/booking'
-    target: '/booking.html'
     status: '200'
   
   # 404 handler
