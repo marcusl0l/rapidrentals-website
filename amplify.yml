@@ -11,16 +11,49 @@ frontend:
   cache:
     paths: []
 customHeaders:
-  - pattern: '**/*'
+  # Images - cache 1 year (immutable)
+  - pattern: '**/*.{jpg,jpeg,png,gif,ico,svg,webp}'
     headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+  
+  # CSS and JS - cache 1 year (immutable)
+  - pattern: '**/*.{css,js}'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+  
+  # HTML pages - cache 1 hour, revalidate
+  - pattern: '**/*.html'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=3600, must-revalidate'
       - key: 'Strict-Transport-Security'
         value: 'max-age=31536000; includeSubDomains'
       - key: 'X-Content-Type-Options'
         value: 'nosniff'
       - key: 'X-Frame-Options'
         value: 'SAMEORIGIN'
+  
+  # Root and other files - cache 1 hour
+  - pattern: '**/*'
+    headers:
       - key: 'Cache-Control'
         value: 'public, max-age=3600'
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'X-Frame-Options'
+        value: 'SAMEORIGIN'
 redirects:
   # Old pages (301 permanent redirects)
   - source: '/ContactUs.html'
